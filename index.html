@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juntador de PDF Local</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
+    <script src="https://unpkg.com/pdf-lib/dist/pdf-lib.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.15.0/Sortable.min.js"></script>
+
+    <style>
+        .drop-zone {
+            border: 2px dashed #ccc;
+            border-radius: 10px;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+        .drop-zone:hover {
+            border-color: #0d6efd;
+            background-color: #f8f9fa;
+        }
+    </style>
+</head>
+<body class="bg-light">
+
+    <div class="container py-5">
+        <div class="row justify-content-center">
+            <div class="col-md-8 col-lg-6">
+                
+                <div class="card shadow-sm">
+                    <div class="card-header bg-primary text-white">
+                        <h4 class="mb-0">📑 Juntar PDFs</h4>
+                    </div>
+                    
+                    <div class="card-body">
+                        <p class="text-muted small">Seus arquivos são processados 100% no seu navegador. Nada é enviado para servidores.</p>
+
+                        <div class="drop-zone p-5 text-center mb-4" id="drop-area">
+                            <h5 class="text-secondary">Clique ou arraste PDFs aqui</h5>
+                            <input type="file" id="fileInput" class="form-control d-none" multiple accept=".pdf">
+                        </div>
+
+                        <h6 class="fw-bold">Arquivos na Fila:</h6>
+                        <ul class="list-group mb-4" id="fileList">
+                            <li class="list-group-item text-muted fst-italic text-center py-3" id="empty-msg">
+                                Nenhum arquivo selecionado
+                            </li>
+                        </ul>
+
+                        <div class="d-grid">
+                            <button class="btn btn-success btn-lg" id="mergeBtn" disabled>
+                                Baixar PDF Unificado
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    
+    <script src="script.js"></script>
+</body>
+</html>
